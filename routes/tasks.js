@@ -266,7 +266,7 @@ module.exports = function (router) {
 
             await Task.deleteOne({ _id: task._id });
 
-            return sendData(res, 200, 'Task deleted.', task);
+            return res.status(204).end();
         } catch (err) {
             return sendError(res, 500, 'An unexpected error occurred while deleting the task.');
         }

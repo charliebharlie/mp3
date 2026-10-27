@@ -275,7 +275,7 @@ module.exports = function (router) {
 
             await User.deleteOne({ _id: user._id });
 
-            return sendData(res, 200, 'User deleted.', user);
+            return res.status(204).end();
         } catch (err) {
             return sendError(res, 500, 'An unexpected error occurred while deleting the user.');
         }
